@@ -154,4 +154,4 @@ td .nm{color:var(--subtle);font-size:12px;margin-left:6px}
 .foot{padding-block:28px 40px;color:var(--subtle);font-size:13px;display:grid;gap:4px}
 .foot p{margin:0}
 @media (max-width:640px){.brand span{display:none}.chart{height:280px}.chart.lg{height:320px}}
-@media (prefers-reduced-motion:r
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

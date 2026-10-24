@@ -629,4 +629,15 @@ def main():
                    m=[rnd(v) for v in nifty.reindex(sel)] if nifty is not None else None)
         (OUT / "s" / f"{s.replace('/', '_')}.json").write_text(json.dumps(obj, separators=(",", ":"), allow_nan=False), encoding="utf-8")
     dump("search.json", [[r_["s"], r_["n"]] for r_ in rows] + [[s, names.get(s, s).title()] for s in active if s not in st_df.index])
-    bu
+    built = datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ")
+    dump("build.json", dict(asof=asof, built=built, days=len(dates), start=dates[0].strftime("%Y-%m-%d")))
+    stamp_assets(built)
+    print(f"built {asof}: {len(dates)} days from {dates[0]:%Y-%m-%d}, {len(rows)} stocks, {len(active)} stock files")
+    for k, v in ov.items():
+        if k == "insights":
+            for i in v:
+                print("  -", i)
+
+
+if __name__ == "__main__":
+    main()
