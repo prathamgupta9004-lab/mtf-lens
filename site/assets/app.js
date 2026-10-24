@@ -1,4 +1,4 @@
-/* RECO MTF Lens Analyzer: a small hash-routed app over the JSON built by pipeline/build.py */
+/* RECO MTF Lens Analyzer Tool: a small hash-routed app over the JSON built by pipeline/build.py */
 (() => {
   'use strict';
   const app = document.getElementById('app');
@@ -624,8 +624,8 @@
   async function about() {
     const b = await load('build.json');
     app.innerHTML = `<article class="card about">
-      <h1 style="font-size:28px">About the RECO MTF Lens Analyzer</h1>
-      <p>The RECO MTF Lens Analyzer tracks India's Margin Trading Facility book: the money brokers lend investors to buy shares, which those investors pay interest on and must top up when prices fall. A large, fast-growing book means more forced selling waits below the market if prices drop.</p>
+      <h1 style="font-size:28px">About the RECO MTF Lens Analyzer Tool</h1>
+      <p>The RECO MTF Lens Analyzer Tool tracks India's Margin Trading Facility book: the money brokers lend investors to buy shares, which those investors pay interest on and must top up when prices fall. A large, fast-growing book means more forced selling waits below the market if prices drop.</p>
       <h2>Data</h2>
       <ul>
         <li>NSE's daily margin trading disclosure: amount funded and shares funded for every stock, and the day's new and closed positions.</li>
