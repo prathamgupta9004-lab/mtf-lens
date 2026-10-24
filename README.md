@@ -1,4 +1,4 @@
-# MTF Lens
+# RECO MTF Lens Analyzer
 
 India's margin trading (MTF) book, rebuilt every trading day from NSE's public disclosures, with a plain-English insight on every chart.
 
