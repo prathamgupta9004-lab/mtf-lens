@@ -1,4 +1,4 @@
-/* Palette: Reco Wealth greens on white. Type: Inter 500 headings. Layout: sticky pill nav, dark green hero, white bordered cards each ending in a mint insight box. */
+/* Palette: brand greens (originally on white; see skin at the end). Type: Inter 500 headings. Layout: sticky pill nav, dark green hero, white bordered cards each ending in a mint insight box. */
 :root{
   --deep:#064e3b; --primary:#1e4d3d; --core:#059669; --badge:#047857; --bright:#10b981; --mint:#2fcd97; --soft:#6ee7b7;
   --tint:#ecfdf5; --tint-line:#d1fae5;
@@ -155,3 +155,63 @@ td .nm{color:var(--subtle);font-size:12px;margin-left:6px}
 .foot p{margin:0}
 @media (max-width:640px){.brand span{display:none}.chart{height:280px}.chart.lg{height:320px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ===================================================================================
+   Pratham Gupta dashboard skin (matches Sector Rotation / market-dashboards hub).
+   Dark-green canvas, mint accent, glowing cards with rise-in motion. Wins over any
+   saved light/dark preference so every visitor sees the same design.
+   =================================================================================== */
+html:root,html:root[data-theme],html:root[data-theme="light"],html:root[data-theme="dark"]{
+  color-scheme:dark;
+  --deep:#064E3B; --primary:#1E4D3D; --core:#2FE3B5; --badge:#6EE7B7; --bright:#10B981; --mint:#2FE3B5; --soft:#6EE7B7;
+  --tint:rgba(47,227,181,.07); --tint-line:#21443A;
+  --fg:#EEF5F2; --heading:#FFFFFF; --muted:rgba(238,245,242,.66); --subtle:rgba(238,245,242,.46);
+  --bg:#030806; --card:#0A1713; --surface:#0E1F19; --line:#16302A; --line2:#21443A;
+  --up:#2FE3B5; --down:#FF5C6C; --down-tint:rgba(255,92,108,.10); --down-line:#5b2129;
+  --warn:#E0A64A; --warn-tint:rgba(224,166,74,.10); --warn-line:#5a4420;
+  --c1:#2FE3B5; --c2:#8EC3A9; --c3:#10B981; --c4:#E0A64A; --c5:#6B7A74; --c6:#1E4D3D; --c7:#FF5C6C;
+  --grid:rgba(47,227,181,.07); --axis:#21443A;
+}
+body{background:var(--bg)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(900px 520px at 12% 108%,rgba(5,150,105,.30),transparent 70%),radial-gradient(700px 420px at 100% -10%,rgba(47,227,181,.10),transparent 70%),
+  linear-gradient(rgba(47,227,181,.035) 1px,transparent 1px) 0 0/72px 72px,linear-gradient(90deg,rgba(47,227,181,.035) 1px,transparent 1px) 0 0/72px 72px,#030806}
+::selection{background:rgba(47,227,181,.3)}
+.theme{display:none!important}
+.top{background:rgba(3,8,6,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.pg-back{flex:none;color:var(--muted);text-decoration:none;font-size:13px;border:1px solid var(--line2);border-radius:999px;padding:5px 11px;transition:all .2s;white-space:nowrap}
+.pg-back:hover{color:var(--mint);border-color:var(--mint)}
+.brand img{width:34px;height:34px;border-radius:50%;border:2px solid var(--mint);object-fit:cover}
+.brand .bt{display:grid;line-height:1.15}.brand .bt b{font-weight:700;font-size:15.5px;color:#fff}.brand .bt small{font-size:11.5px;font-weight:500;color:var(--mint)}
+.nav{background:var(--card);border-color:var(--line)}
+.nav a{transition:color .2s}
+.nav a[aria-current="page"]{background:linear-gradient(135deg,#2FE3B5,#10B981);color:#03140E;font-weight:600;box-shadow:0 4px 16px rgba(47,227,181,.22)}
+h1,h2,h3{font-weight:700;letter-spacing:-.015em}
+.hero{background:radial-gradient(120% 100% at 0% 100%,rgba(5,150,105,.35),transparent 60%),linear-gradient(160deg,#0E1F19,#08130F 60%);border:1px solid var(--line2);animation:pg-rise .6s ease both}
+.hero .eyebrow{color:var(--mint);border-color:rgba(47,227,181,.35);background:rgba(47,227,181,.08)}
+.hero h1 .delta{background:rgba(47,227,181,.10)}
+.hero .up{color:var(--mint)}.hero .down{color:#FF8A96}
+.read li::before{background:var(--mint);box-shadow:0 0 10px rgba(47,227,181,.6)}
+.ht{background:linear-gradient(160deg,rgba(47,227,181,.06),rgba(255,255,255,.02));border-color:var(--line2);transition:transform .2s,border-color .2s}
+.ht:hover{transform:translateY(-2px);border-color:rgba(47,227,181,.45)}
+.ht .v{font-weight:700}
+.card,.kg{background:linear-gradient(170deg,#0E1F19,#0A1713 60%);border-color:var(--line);transition:transform .22s cubic-bezier(.2,.8,.2,1),border-color .22s,box-shadow .22s;animation:pg-rise .55s cubic-bezier(.2,.8,.2,1) both}
+.card:hover,.kg:hover{transform:translateY(-3px);border-color:rgba(47,227,181,.5);box-shadow:0 18px 40px -20px rgba(47,227,181,.35)}
+.grid>*:nth-child(2){animation-delay:.06s}.grid>*:nth-child(3){animation-delay:.12s}.grid>*:nth-child(4){animation-delay:.18s}.grid>*:nth-child(n+5){animation-delay:.24s}
+.kgroups>*:nth-child(2){animation-delay:.06s}.kgroups>*:nth-child(3){animation-delay:.12s}.kgroups>*:nth-child(n+4){animation-delay:.18s}
+.insight{background:rgba(47,227,181,.06);border-color:var(--line2);border-left:3px solid var(--mint)}
+.insight .lbl{color:var(--mint)}.insight .lbl::before{background:var(--mint);box-shadow:0 0 8px rgba(47,227,181,.7)}
+.seg button[aria-pressed="true"]{background:linear-gradient(135deg,#2FE3B5,#10B981);color:#03140E;font-weight:600;box-shadow:0 3px 12px rgba(47,227,181,.25)}
+.seg button{transition:color .2s}
+.btn{background:linear-gradient(135deg,#2FE3B5,#10B981);border-color:transparent;color:#03140E;font-weight:600}
+.btn.ghost{background:transparent;color:var(--mint);border-color:var(--mint)}
+.chip{transition:border-color .2s}.chip:hover{border-color:var(--mint)}
+.bar,.track i{background:linear-gradient(90deg,#10B981,#2FE3B5);box-shadow:0 0 10px rgba(47,227,181,.3)}
+.search input:focus,.inp:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 3px rgba(47,227,181,.15)}
+th{background:#08130F}
+tbody tr:hover td{background:rgba(47,227,181,.06)}
+.loading{background:linear-gradient(100deg,transparent 30%,rgba(47,227,181,.08) 50%,transparent 70%) 0 0/300% 100%;animation:pg-shimmer 1.4s linear infinite;border-radius:18px}
+.foot b{color:var(--fg)}
+@keyframes pg-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pg-shimmer{to{background-position:-300% 0}}
+@media (max-width:640px){.pg-back{display:none}.brand .bt small{display:none}}
