@@ -169,7 +169,7 @@ html:root,html:root[data-theme],html:root[data-theme="light"],html:root[data-the
   --bg:#030806; --card:#0A1713; --surface:#0E1F19; --line:#16302A; --line2:#21443A;
   --up:#2FE3B5; --down:#FF5C6C; --down-tint:rgba(255,92,108,.10); --down-line:#5b2129;
   --warn:#E0A64A; --warn-tint:rgba(224,166,74,.10); --warn-line:#5a4420;
-  --c1:#2FE3B5; --c2:#8EC3A9; --c3:#10B981; --c4:#E0A64A; --c5:#6B7A74; --c6:#1E4D3D; --c7:#FF5C6C;
+  --c1:#2FE3B5; --c2:#5AA9F0; --c3:#A78BFA; --c4:#E0A64A; --c5:#8A9690; --c6:#3E6B5E; --c7:#FF5C6C;
   --grid:rgba(47,227,181,.07); --axis:#21443A;
 }
 body{background:var(--bg)}
